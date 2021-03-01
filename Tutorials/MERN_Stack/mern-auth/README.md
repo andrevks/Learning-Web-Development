@@ -1,4 +1,4 @@
-# Testing Login and Register Endpoints
+#  :beginner: Testing Login and Register Endpoints
 
 ## Endpoints:
 
@@ -11,12 +11,14 @@ Navigate to the Body tab, select x-www-form-urlencoded, fill in your registratio
 ## Manual Test Made:
 
 *1 - Checked invalid email formats*
-  *If they don't have "@"
-  *If they don't have at least 2 characters after the "."
+
+  * If they don't have "@"
+  * If they don't have at least 2 characters after the "."
 
 *2 - Checked invalid passwords*
-  *If they don't match
-  *If they are shorter than 6 characters
+
+  * If they don't match
+  * If they are shorter than 6 characters
 
 ## Short statement about the project:
 
