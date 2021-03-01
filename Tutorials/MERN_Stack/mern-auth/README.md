@@ -1,24 +1,24 @@
-##Testing Login and Register Endpoints
+# Testing Login and Register Endpoints
 
-#Endpoints:
+## Endpoints:
 
-Register: POST http://localhost:5000/api/users/register 
+> Register: POST http://localhost:5000/api/users/register 
 
 Navigate to the Body tab, select x-www-form-urlencoded, fill in your registration parameters (name, email,password,password2) and hit Send
 
-Login: POST http://localhost:5000/api/users/login same thing as register, instead just fill login parameters (email,password).
+> Login: POST http://localhost:5000/api/users/login same thing as register, instead just fill login parameters (email,password).
 
-#Manual Test Made:
+## Manual Test Made:
 
-1 - Checked invalid email formats
-  -If they don't have "@"
-  -If they don't have at least 2 characters after the "."
+*1 - Checked invalid email formats*
+  *If they don't have "@"
+  *If they don't have at least 2 characters after the "."
 
-2 - Checked invalid passwords
-  -If they don't match
-  -If they are shorter than 6 characters
+*2 - Checked invalid passwords*
+  *If they don't match
+  *If they are shorter than 6 characters
 
-#Short statement about the project:
+## Short statement about the project:
 
 - On the tutorial was asked to use Mlab, but I couldn't connect there. Then a mistake was because I just allowed the currently IP address on my machine. 
 
