@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import {  connect } from "react-redux";
+import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 
@@ -14,6 +14,7 @@ class Login extends Component {
       errors: {}
     };
   }
+
   componentDidMount() {
     // If logged in and user navigates to Login page, should redirect them to dashboard
     if (this.props.auth.isAuthenticated) {

@@ -39,13 +39,13 @@ export const loginUser = userData => dispatch =>{
       //set current user
       dispatch(setCurrentUser(decoded));
     })
-    .catch(err =>{
+    .catch(err =>
       dispatch({
         type:GET_ERRORS,
         payload: err.response.data
       })
-    });
-
+    );
+};
     //set logged in user
     export const setCurrentUser = decoded => {
       return {
@@ -71,4 +71,3 @@ export const loginUser = userData => dispatch =>{
       //set isAuthenticaded to false
       dispatch(setCurrentUser({}));
     };
-}
