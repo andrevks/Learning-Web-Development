@@ -30,6 +30,7 @@ class Register extends Component{
       this.setState({
         errors: nextProps.errors
       });
+      console.log("Component")
     }
   }
   onChange = e =>{
@@ -76,7 +77,7 @@ class Register extends Component{
                   error={errors.name}
                   id="name"
                   type="text"
-                  classname={
+                  className={
                     classnames("",{
                       invalid: errors.name
                     })}
@@ -91,7 +92,7 @@ class Register extends Component{
                   error={errors.email}
                   id="email"
                   type="email"
-                  classname={
+                  className={
                     classnames("",{
                       invalid: errors.email
                     })}
@@ -106,7 +107,7 @@ class Register extends Component{
                   error={errors.password}
                   id="password"
                   type="password"
-                  classname={
+                  className={
                     classnames("",{
                       invalid: errors.password
                     })}
@@ -121,7 +122,7 @@ class Register extends Component{
                   error={errors.password2}
                   id="password2"
                   type="password"
-                  classname={
+                  className={
                     classnames("",{
                       invalid: errors.password2
                     })}
