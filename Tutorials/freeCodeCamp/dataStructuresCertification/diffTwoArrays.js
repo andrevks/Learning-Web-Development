@@ -11,37 +11,20 @@ Note: You can return the array with its elements in any order.
 function diffArray(arr1, arr2) {
   var newArr = [];
 
-
-  
-  let arr3 = arr1.concat(arr2)
-
-  console.log(arr3)
-  // .filter((elem) => {
-
-    for(let i = 0; i < arr3.length; i++){
-
-      if(typeof(arr1[i]) !== 'undefined' && (arr2[i]) !== 'undefined'){
-         console.log(".")
-         if(!arr3.includes(arr2[i])){
-            console.log("arr2: ", arr2[i],arr3.includes(arr2[i]))
-         }
-
-         if(!arr3.includes(arr1[i])){
-          console.log("arr1: ", arr1[i],arr3.includes(arr1[i]))
+  function compareArr(arr1, arr2){
+     for(let i = 0; i < arr2.length; i++){
+         if(!arr1.includes(arr2[i])){
+           console.log("Right here: ", arr2[i] , "is not isn't included")
+           newArr.push(arr2[i])
          } 
       }
+  }
 
-     
-
-   
-       
-    }
-   
-  // })
-  
+    compareArr(arr1,arr2);
+    compareArr(arr2,arr1);
 
   return newArr;
 }
 
 console.log("Result:")
-console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]))
+console.log(diffArray([], ["snuffleupagus", "cookie monster", "elmo"]))
