@@ -9,20 +9,22 @@ function destroyer(arr) {
   //     arr.splice(index,1)
   //   }
   // }
-  const args = Array.from(arguments)
-  //console.log(args)
-  const newArr = arr.filter(
-    (elem,index) => {
-      
-      for(let i = 1; i < args.length; i++){
-        
-        if(args[i] != elem){
-         return true;
-        }
+  var newArr = []
+  const args = Array.from(arguments).slice(1)
+
+  for(let i = 0; i < args.length; i++){ 
+     arr.filter(
+      (elem) => {
+        console.log("elem: ",elem)
+        console.log(args[i])
+        if(arg[i])
       }
-      console.log("====")
-    }
-  )
+     
+    )
+     console.log(newArr)
+     console.log("---")
+  }
+ 
   return newArr;
 }
 
