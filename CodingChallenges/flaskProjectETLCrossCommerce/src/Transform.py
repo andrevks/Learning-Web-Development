@@ -4,7 +4,6 @@ import time
 
 def merge(leftArr, rightArr):
     mergedArr = []
-
     while len(leftArr) > 0 and len(rightArr) > 0:
         if leftArr[0]  < rightArr[0]:
             mergedArr.append(leftArr[0])
