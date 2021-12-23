@@ -26,7 +26,7 @@ def merge(leftArr, rightArr):
 
 
 def mergeSort(arr):
-    print(f'\narr: {arr}')
+    # print(f'\narr: {arr}')
     arrLength = len(arr)
     if arrLength == 1:
         return arr
@@ -34,8 +34,8 @@ def mergeSort(arr):
     mid = int((arrLength - 1) / 2)
     leftArr = arr[0:mid+1]
     rightArr = arr[mid+1:]
-    print(f'leftArr before: {leftArr}')
-    print(f'rightArr before: {rightArr}')
+    # print(f'leftArr before: {leftArr}')
+    # print(f'rightArr before: {rightArr}')
 
     leftArr = mergeSort(leftArr)
     rightArr = mergeSort(rightArr)
