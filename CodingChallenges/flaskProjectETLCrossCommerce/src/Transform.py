@@ -1,6 +1,7 @@
 import json
-
 import time
+import os
+import glob
 
 def merge(leftArr, rightArr):
     mergedArr = []
@@ -39,20 +40,27 @@ def mergeSort(arr):
     leftArr = mergeSort(leftArr)
     rightArr = mergeSort(rightArr)
 
-    # merge fun
     return merge(leftArr, rightArr)
 
 
+def get_recent_file(type):
+    list_of_files = glob.glob(f'.\\dataWarehouse\\{type}\\*.json')
+    latest_file = max(list_of_files, key=os.path.getctime)
+    print(latest_file)
+    return latest_file
 
-if __name__ == '__main__':
-    day = '21-Dec-2021'
-    filename = f'extractedNumbers-{day}.json'
-    # filename = f'extractedNumbers.json'
+def transform():
+    # day = '21-Dec-2021'
+    # filename = f'extractedNumbers-{day}.json'
     orderedNumbers = []
     try:
+        filename = get_recent_file('extracted')
         with open(filename, 'r') as inputFile:
             numbersExtracted = json.load(inputFile)
-        print(f'----Before Transforming-----')
+
+        print(f'>>>File Before Transforming:{numbersExtracted}')
+
+        # print(f'----Before Transforming-----')
         count = 0
         # O(n)
         for number in numbersExtracted:
@@ -60,7 +68,6 @@ if __name__ == '__main__':
         print(f'Numbers Extracted: {count}')
 
         print('>> initiating Transformation...\n')
-        testArr = [9,3,7,5,6,4,8,2]
 
         startTime = time.time()
         orderedNumbers = mergeSort(numbersExtracted)
@@ -72,9 +79,13 @@ if __name__ == '__main__':
         print(f" Took {executionTime} s to TRANSFORM")
         print("-----------------------------------\n")
         json_transformedNumbers = json.dumps(orderedNumbers, indent=4)
-        with open(f'transformedNumbers-{day}.json' , 'w') as outfile:
+        day = filename.split('extractedNumbers',1)[1]
+        savedFileName = f'transformedNumbers{day}'
+        print(f'savedFileName: {savedFileName}')
+        with open(savedFileName, 'w') as outfile:
             outfile.write(json_transformedNumbers)
             # json.dump(orderedNumbers , outfile , indent=4)
+
 
     except Exception as ex:
         print(f'Error in Tranforming: {ex}')

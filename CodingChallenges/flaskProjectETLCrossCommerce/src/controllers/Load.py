@@ -3,13 +3,17 @@ from flask_restx import Api, Resource, reqparse
 from src.server.instance import server
 import json
 
+import glob
+import os
+
 app, api = server.app, server.api
 parser = reqparse.RequestParser()
 parser.add_argument('page', required=False)
 
 def read_transform_file():
-    day = '21-Dec-2021'
-    filename = f'src/transformedNumbers-{day}.json'
+    # day = '21-Dec-2021'
+    # filename = f'src/dataWarehouse/transformed/transformedNumbers-{day}.json'
+    filename = get_recent_file()
     transformedNumbers = []
     try:
         with open(filename , 'r') as inputFile:
@@ -18,6 +22,23 @@ def read_transform_file():
         return transformedNumbers
     except Exception as ex:
         print(f'Error in Open file: {ex}')
+
+
+def get_recent_file():
+    list_of_files = glob.glob('.\\src\\dataWarehouse\\transformed\\*.json')
+    latest_file = max(list_of_files, key=os.path.getctime)
+    print(f'latest_file in LOAD: {latest_file}')
+    try:
+        with open(latest_file , 'r') as inputFile:
+            transformedNumbers = json.load(inputFile)
+        print(f'----Before Transforming-----')
+        print(transformedNumbers)
+    except Exception as ex:
+        print(f'Error in Open file: {ex}')
+    return latest_file
+
+# if __name__ == '__main__':
+#     get_recent_file()
 
 
 transformedNumbers = read_transform_file()
