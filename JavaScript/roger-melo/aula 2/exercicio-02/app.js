@@ -36,8 +36,7 @@ e sobrenome do Tom que você mais gosta;
 const tom = 'Tom';
 const firstTom = 'Hanks';
 const secondTom = 'Cruise';
-
-const myFavoriteTom = `${tom} ${firstTom}`;
+const myFavoriteTom = tom + ' ' + secondTom;
 
 // console.log(myFavoriteTom);
 
@@ -46,14 +45,14 @@ const myFavoriteTom = `${tom} ${firstTom}`;
 05 - Comente o console.log acima, e:
 
 - Armazene a palavra 'JavaScript' em uma constante "programmingLanguage";
-- Armazene a junção das letras "J" e "S", da programmingLanguage, em uma constante "js";
+- Armazene a junção das letras "J" e "S", da programmingLanguage, em uma 
+constante "js";
 - As letras não devem ser digitadas manualmente;
 - Exiba a "js" no console do browser;
 */
 
 const programmingLanguage = 'JavaScript';
-
-const js = programmingLanguage.slice(0, 1) + programmingLanguage.slice(4,5)
+const js = programmingLanguage[0] + programmingLanguage[4]
 
 // console.log(js);
 
@@ -67,7 +66,7 @@ const js = programmingLanguage.slice(0, 1) + programmingLanguage.slice(4,5)
 */
 
 const mozilla = 'Mozilla Developer Network';
-const mdn = mozilla.slice(0,1) + mozilla.slice(8,9) + mozilla.slice(18,19);
+const mdn = mozilla[0] + mozilla[8] + mozilla[18]
 // console.log(mdn);
 
 /*
@@ -273,5 +272,3 @@ let newName =
 newName =
 `${name1[0].toUpperCase()}${name1.slice(1,6)} ${name1[7].toUpperCase()}${name1.slice(8)}
 `
-
-// console.log(newName)
