@@ -76,7 +76,7 @@ const maleDogNames = ['Chico', 'Zeca']
 const femaleDogNames = ['Lilica','Matilda']
 let dogNames = maleDogNames.concat(femaleDogNames)
 
-console.log(dogNames);
+// console.log(dogNames);
 
 
 /*
@@ -88,11 +88,12 @@ console.log(dogNames);
 - O resultado deve ser: "nome1, nome2, nome3, nome4".
 */
 
+// console.log(dogNames.join(', '))
+
 
 
 /*
 08 - Comente o console.log acima e:
-
 - Exiba no console o último item do array "dogNames", mas de  
 forma que caso a quantidade de itens do array aumente ou diminua,  
 o último item continue sendo exibido;
@@ -103,6 +104,9 @@ utilizando o método adequado para isso;
 agora é "Lilica".
 */
 
+
+dogNames.pop()
+// console.log(dogNames[dogNames.length-1])
 
 
 /*
@@ -118,6 +122,10 @@ apenas as letras iniciais dos nomes do array "dogNames";
 */
 
 
+dogNames.push('Nina')
+
+const initials = `${dogNames[0][0]}${dogNames[1][0]}${dogNames[2][0]}${dogNames[3][0]}`
+// console.log(initials)
 
 /*
 10 - Comente o console.log acima e:
@@ -126,7 +134,7 @@ apenas as letras iniciais dos nomes do array "dogNames";
 - Utilize o método adequado para isso.
 */
 
-
+// console.log(initials.toLowerCase())
 
 /*
 11 - Comente o console.log acima e:
@@ -144,6 +152,12 @@ constante que você criou.
 'A SOBREMESA é um doce à base de coco, tradicional na América Latina e em Angola.'
 */
 
+const dessert = 
+`${dogNames[0].slice(3)}${dogNames[1].slice(2)}${dogNames[3].slice(2)}`.replace('n','d')
+
+const sentence = 'A SOBREMESA é um doce à base de coco, tradicional na América Latina e em Angola.'
+// console.log(sentence.replace('SOBREMESA', dessert))
+
 
 
 /*
@@ -158,3 +172,8 @@ elevado ao cubo, faça o 2º item do array receber todo o valor que ele
 já tem, mais 4;
 - Agora, o resultado exibido no console deve ser 729.
 */
+
+let oddNumbers = [3, 5, 7]
+oddNumbers[1] += 4
+console.log(oddNumbers[1] ** 3)
+
