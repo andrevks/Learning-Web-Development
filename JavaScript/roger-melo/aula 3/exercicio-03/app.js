@@ -10,6 +10,7 @@
 02 - Armazene um array vazio em uma let "brazilianFoods";
 */
 
+let brazilianFoods = []
 
 
 /*
@@ -22,6 +23,11 @@
 - Exiba a brazilianFoods no console.
 */
 
+brazilianFoods.push('Coxinha')
+brazilianFoods.push(null)
+brazilianFoods.push('Brigadeiro')
+
+// console.log(brazilianFoods);
 
 
 /*
@@ -33,12 +39,15 @@ array "brazilianFoods" (null) seja substituído por "Pão de Queijo";
 */
 
 
+brazilianFoods[1] = 'Pão de Queijo'
+// console.log(brazilianFoods[1])
+
 
 /*
 05 - Comente o console.log acima e:
 
-- Armazene em uma const "foodsInfo" a seguinte string: "Até aqui, o  
-array "brazilianFoods" possui NUMERO_DE_ITENS itens: NOME_DO_ITEM_1,  
+- Armazene em uma const "foodsInfo" a seguinte string: 
+"Até aqui, o  array "brazilianFoods" possui NUMERO_DE_ITENS itens: NOME_DO_ITEM_1,  
 NOME_DO_ITEM_2 e NOME_DO_ITEM_3.";
 - Substitua "NUMERO_DE_ITENS" pelo valor correto, mas sem inserir o  
 número diretamente;
@@ -46,8 +55,10 @@ número diretamente;
 mas sem digitar os nomes das comidas diretamente;
 - Exiba a foodsInfo no console.
 */
-
-
+const foodsInfo = 
+`Até aqui, o array "brazilianFoods" possui ${brazilianFoods.length} itens: ${brazilianFoods[0]}, ${brazilianFoods[1]} e ${brazilianFoods[2]}.'
+`
+// console.log(foodsInfo)
 
 /*
 06 - Comente o console.log acima e:
@@ -61,6 +72,11 @@ itens "Lilica" e "Matilda";
 - Exiba a "dogNames" no console.
 */
 
+const maleDogNames = ['Chico', 'Zeca']
+const femaleDogNames = ['Lilica','Matilda']
+let dogNames = maleDogNames.concat(femaleDogNames)
+
+console.log(dogNames);
 
 
 /*
