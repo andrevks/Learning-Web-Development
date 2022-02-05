@@ -14,7 +14,8 @@
 */
 
 const my3FavoriteTVShows = ['Breaking Bad', 'South Park', 'Rick and Morty']
-const sentence =`Minhas 3 séries favoritas são: ${my3FavoriteTVShows.slice(0,1)}, ${my3FavoriteTVShows.slice(1,2)} e ${my3FavoriteTVShows.slice(2,3)}.`
+const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows.join(', ')}.`
+.replace('k, ', 'k e ')
 // console.log(sentence)
 
 
@@ -152,5 +153,4 @@ const isNotAString = typeof(randomTVShow) !== 'string'
 */
 
 const evenNumbers = [0, 2, 4, 6, 8, 10]
-
-// console.log(evenNumbers.indexOf(8) > -1)
+// console.log(evenNumbers !== -1)
