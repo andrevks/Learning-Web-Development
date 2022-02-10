@@ -37,17 +37,18 @@ const isLion = animals.includes('leão')
 
 // const randomValues = [59, 61, 73, 57, 35, 73, 21, 87, 43]
 let numbersAmount = null
+const limit = 400
 
 // for(let i=0; i < randomNumbers.length; i++){
-//   const number = randomNumbers[i]
-//   numbersAmount += number
-//   const isAmountGreaterThan400 = numbersAmount > 400
+//   numbersAmount += randomNumbers[i]
+//   const isAmountGreaterThanLimit = numbersAmount > limit
 
-//   if(isAmountGreaterThan400){ 
-//     console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${numbersAmount}.`)
+//   if(isAmountGreaterThanLimit){ 
+//     console.log(`A soma ultrapassou ${limit}. Até aqui, o valor atual é ${numbersAmount}.`)
 //     break
 //   }
 // }
+
 
 /*
   04
@@ -59,16 +60,15 @@ let numbersAmount = null
 */
 
 const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sabedoria.']
-let stringConcat = ''
-
-for(let i = 0; i < sentence.length; i++){
-  const chuckOfSentence = sentence[i]
-  const isForbiddenWordOnTheSentence = chuckOfSentence.includes('certeza')
-  
-  if(!isForbiddenWordOnTheSentence){
-    stringConcat += ' ' + chuckOfSentence
-  }
-}
+// let stringConcat = ' '
+// for(let i = 0; i < sentence.length; i++){
+ 
+//   const word = sentence[i]
+//   if(word === 'certeza'){
+//     continue
+//   }
+//   stringConcat += `${word} ` 
+// }
 
 // console.log(stringConcat)
 
@@ -87,32 +87,43 @@ for(let i = 0; i < sentence.length; i++){
   "
 */
 
-// const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
-// let stringAmount = null
-// let booleanAmount = null
-// let stringArray = []
+const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
+let stringAmount = 0
+let booleanAmount = 0 
+let firstFourStrings = []
+let totalIterations = 0
 
-// for(let i = 0; i < randomValues.length; i++){
-//   const item = randomValues[i]
-//   const isString = typeof item === 'string'
-//   const isBoolean = typeof item === 'boolean'
+for(let i=0; i < randomValues.length; i++){
+  const item = randomValues[i]
+  const typeOfItem = typeof item
+  const isString = typeOfItem === 'string'
+  const isBoolean = typeOfItem === 'boolean'
 
-//   if(isString){
-//     stringAmount++
-//     stringArray.push(item)
-//   }else if(isBoolean){
-//     booleanAmount++
-//   }
-//   if(stringAmount === 4){
+  if(stringAmount === 4){
+    break
+  }
 
-//     console.log(`As primeiras 4 strings são ${stringArray.join(', ').replace(', G', ' e G')};`)
-//     console.log(`Até que as primeiras 4 strings fossem iteradas, ${booleanAmount} booleans foram iterados;`)
-//     console.log(`O array foi iterado por ${i+1} vezes.`) 
-//     break
-//   }
-  
-// }
+  if(isString){
+    stringAmount++
+    firstFourStrings.push(item)
+  } 
+   
+  if(isBoolean){
+     booleanAmount++
+  }
 
+  totalIterations++
+}
+
+const lastPosition = firstFourStrings.length - 1
+const lastString = firstFourStrings[lastPosition]
+const fourStrings = firstFourStrings.join(', ')
+.replace(`, ${lastString}`,` e ${lastString}`)
+
+console.log(`3 informações sobre o array randomValues:
+  - As primeiras 4 strings são ${fourStrings};
+  - Até que as primeiras 4 strings fossem iteradas, ${booleanAmount} booleans foram iterados;
+  - O array foi iterado por ${totalIterations} vezes.`)
 /*
   06
 
@@ -162,7 +173,16 @@ switch(drinkType){
     para testar o switch que você escreveu.
 */
 
-const a = 3
+const number = 3
+const numberMessage = 'O valor de "number" é'
+switch(number){
+  case 0:
+  case 1:
+    console.log(`${numberMessage} ${number}`)
+  break;
+  default:
+    console.log(`${numberMessage} qualquer número, exceto 0 e 1`)
+}
 
 // if (a === 0) {
 //   console.log(`O valor de "a" é ${a}`)
@@ -171,12 +191,3 @@ const a = 3
 // } else {
 //   console.log('O valor de "a" é qualquer número, exceto 0 e 1')
 // }
-
-switch(a){
-  case 0:
-  case 1:
-    console.log(`O valor de "a" é ${a}`)
-  break;
-  default:
-    console.log('O valor de "a" é qualquer número, exceto 0 e 1')
-}
