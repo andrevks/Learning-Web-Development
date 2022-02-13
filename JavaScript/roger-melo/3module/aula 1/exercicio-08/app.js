@@ -185,5 +185,12 @@ for(let i = 0; i < functions.length; i++){
   sentence += `${word()} `
 }
 
-console.log(sentence)
+// console.log(sentence)
 
+const socialNetworks = ['youtube','twitter','instagram','facebook']
+socialNetworks.forEach( (socialNetwork, index, array) => {
+  
+  console.log(socialNetwork)
+
+  }
+)
